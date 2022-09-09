@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashlight Effect</title>
+    <link rel="stylesheet" href="flashlight.css">
+    <link href="https://fonts.google.com/specimen/Noto+Sans+JP" rel="stylesheet"/>
+</head>
+<body>
+    <div id="flashlight"></div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sit a perferendis illo quos excepturi minus ducimus mollitia molestiae veritatis dolore, optio totam? Ea, laudantium nostrum ullam rerum consequatur ut!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed similique nostrum quidem, dolorem tenetur doloribus nulla, eligendi nesciunt atque ipsam esse molestiae natus sunt dolore architecto officia beatae sint recusandae.
+    </p>
+    <a href="https://www.youtube.com/watch?v=9exIzZVJoY4&list=RD9exIzZVJoY4&start_radio=1"
+    target="_blank">Tak Ingin Usai</a>
+    <script>
+        alert("Move your mouse/finger across the screen!")
+        let mouseX = 0;
+        let mouseY = 0;
+        let flashlight = document.getElementById("flashlight");
+
+        const isTouchDevice = () =>{
+            try{
+                document.createEvent("TouchEvent"); return true;
+            } catch (e){
+                return false;
+            }
+        };
+        function getMousePosition(e){
+            try{
+                mouseX = !isTouchDevice()? e.pageX : e.touches[0].pageY;
+                mouseY = !isTouchDevice()? e.pageY : e.touches[0].pageY;
+                    flashlight.style.setProperty("--Xpos",mouseX + "px");
+                    flashlight.style.setProperty("--Ypos",mouseY + "px");
+            }
+            catch(e){
+
+            }
+        }
+        document.addEventListener("mousemove", getMousePosition);
+        document.addEventListener("touchmove", getMousePosition);
+    </script>
+    
+</body>
+</html>
