@@ -83,42 +83,42 @@
         var value =" ";
             function value(input)
             {
-                input=String(input); value+=input;
-                document.getElementById("val").innerHTML=value;
+                input=String(input); Value+=input;
+                document.getElementById("val").innerHTML=Value;
             }
             function clr()
             {
                 document.getElementById("val").innerHTML="";
-                value = "";
+                Value = "";
             }
             function back()
             {
-                value = String(Value);
+                Value = String(Value);
 
-                if(value.length-1==0||value=="INVALID"||value=="undefined"||value=="infinity")
+                if(Value.length-1==0||Value=="INVALID"||Value=="undefined"||Value=="infinity")
                 {    
                     clr();      
                 }
                 else
                 {
-                    value=value.substring(0,value.length-1);
+                    Value=Value.substring(0,Value.length-1);
                 }
                 document.getElementById("val").innerHTML= value;
             }
             function eq()
             {
-                var len = value.length-1;
+                var len = Value.length-1;
 
                 try
-                {   value = structuredClone(eval(value));   }
+                {   Value = structuredClone(eval(Value));   }
                 catch
-                {   value = "INVALID";   }
-                    document.getElementById("val").innerHTML = value ;
+                {   Value = "INVALID";   }
+                    document.getElementById("val").innerHTML = Value ;
             }
             function dev(){
                 alert("on development")
             }
-                alert("to backward click on value")
+                alert('to backward click on value')
                 
                 
     </script>
@@ -146,7 +146,19 @@
             <tr>
                 <td class="symbols mid" onclick="value(4)">4</td>
                 <td class="symbols mid" onclick="value(5)">5</td>
-                <td class="symbols"></td>
+                <td class="symbols mid" onclick="value(6)">6</td>
+                <td class="symbols siderow" onclick="value('-')">-</td>           
+            </tr>
+            <tr>
+                <td class="symbols mid" onclick="value(7)">7</td>
+                <td class="symbols mid" onclick="value(8)">8</td>
+                <td class="symbols mid" onclick="value(9)">9</td>
+                <td class="symbols siderow" onclick="value('+')">+</td>
+            </tr>
+            <tr>
+                <td class="symbols mid" colspan="2" onclick="value(0)">0</td>
+                <td class="symbols mid" onclick="value('.')">.</td>
+                <td class="symbols siderow" onclick="eq()">=</td>
             </tr>
             
         </table>
