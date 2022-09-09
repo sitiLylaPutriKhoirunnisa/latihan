@@ -79,49 +79,7 @@
             background-color: #333333;
         }
     </style>
-    <script>
-        var value =" ";
-            function value(input)
-            {
-                input=String(input); Value+=input;
-                document.getElementById("val").innerHTML=Value;
-            }
-            function clr()
-            {
-                document.getElementById("val").innerHTML="";
-                Value = "";
-            }
-            function back()
-            {
-                Value = String(Value);
-
-                if(Value.length-1==0||Value=="INVALID"||Value=="undefined"||Value=="infinity")
-                {    
-                    clr();      
-                }
-                else
-                {
-                    Value=Value.substring(0,Value.length-1);
-                }
-                document.getElementById("val").innerHTML= value;
-            }
-            function eq()
-            {
-                var len = Value.length-1;
-
-                try
-                {   Value = structuredClone(eval(Value));   }
-                catch
-                {   Value = "INVALID";   }
-                    document.getElementById("val").innerHTML = Value ;
-            }
-            function dev(){
-                alert("on development")
-            }
-                alert('to backward click on value')
-                
-                
-    </script>
+   
     <title>CALCULATOR</title>
     
 </head>
@@ -163,6 +121,48 @@
             
         </table>
     </div>
-    
+    <script>
+        var Value =" ";
+            function value(input)
+            {
+                input=String(input); Value+=input;
+                document.getElementById("val").innerHTML=Value;
+            }
+            function clr()
+            {
+                document.getElementById("val").innerHTML="";
+                Value = "";
+            }
+            function back()
+            {
+                Value = String(Value);
+
+                if(Value.length-1==0||Value=="INVALID"||Value=="undefined"||Value=="infinity")
+                {    
+                    clr();      
+                }
+                else
+                {
+                    Value=Value.substring(0,Value.length-1);
+                }
+                document.getElementById("val").innerHTML= value;
+            }
+            function eq()
+            {
+                var len = Value.length-1;
+
+                try
+                {   Value = structuredClone(eval(Value));   }
+                catch
+                {   Value = "INVALID";   }
+                    document.getElementById("val").innerHTML = Value ;
+            }
+            function dev(){
+                alert("on development")
+            }
+                alert('to backward click on value')
+                
+                
+    </script>
 </body>
 </html>
