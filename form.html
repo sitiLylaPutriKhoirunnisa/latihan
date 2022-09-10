@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend alignt ="center">Personal Details</legend>
+            <p>
+                <label>Salutation
+                    <br/>
+                    <select name = "Salutation">
+                        <option>--None--</option>
+                        <option>Mr.</option>
+                        <option>Mrs.</option>
+                        <option>Dr.</option>
+                        <option>Prof.</option>
+                    </select>
+                </label>
+            </p>
+            <div>
+                <p>
+                    <label>First Name : <input name = "firstName" placeholder="Name" required/></label><br/>
+                </p>
+                <p>
+                    <label>Last Name : <input name = "lastName" placeholder="Surname"/></label>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Gender :
+                    <br/>
+                    <input type = "radio" name = "gender" value="male"/>
+                    <label for  = "male">Male</label><br/>
+                    <input type = "radio" name = "female" value="female"/>
+                    <label for  = "female">Female</label><br/>
+                    <input type = "radio" name = "gender" value="other"/>
+                    <label for = "other">Other</label><br/>
+                </p>
+            </div>
+            <div>
+                <label>
+                    Course :
+                    <select name = "Course">
+                        <option>select</option>
+                        <option>Java</option>
+                        <option>Python</option>
+                        <option>C++</option>
+                        <option>C</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <p>
+                    <label>Email: <input type = "email" name = "email" required></label>
+                </p>
+                <p>
+                    <label>Date of Birth : <input type="date" name="BirthDate" required></label>
+                </p>
+                <p>
+                    <label>Address : <br/>
+                        <textarea name = "address" placeholder="Your Address" required></textarea>
+                    </label>
+                </p>
+            </div>
+            <div>
+                <button type ="submit">Submit</button>
+                <button type ="reset">Reset</button>
+            </div>
+        </fieldset>
+    </form>
+    <script>
+        alert("I'm a beginner please help me grow. I welcome any comments you might like to make")
+    </script>
+</body>
+</html>
