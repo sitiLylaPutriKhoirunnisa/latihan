@@ -14,6 +14,11 @@
                 <span class="month-picker" id="month-picker">May</span>
             <div class="year-picker" id="year-picker">
                 <span class="year-change" id="pre-year">
+                    <pre><</pre>
+                </span>
+
+                <span id="year">2020</span>
+                <span class="year-change" id="next-year">
                     <pre>></pre>
                 </span>
             </div>
@@ -36,7 +41,7 @@
                 <div class="day-text-formate">TODAY</div>
                 <div class="date-time-value">
                 <div class="time-formate">10:22:01</div>
-                <div class="date-time-formate">12 - september - 2022</div>
+                <div class="date-formate">12 - september - 2022</div>
                 </div>
             </div>
             <div class="month-list"></div>
@@ -53,8 +58,7 @@
             return isLeapYear(year) ? 29:28;
         };
 
-        let calender =
-        document.querySelector('.calender');
+        let calender = document.querySelector('.calender');
         const month_names = [
             'January',
             'February',
@@ -140,7 +144,8 @@
 
         };
 
-        let month_list = calender.querySelector('.month-list');
+        let month_list = document.querySelector('.month-list');
+        console.log(month_list);
         month_names.forEach((e, index) => {
             let month = document.createElement('div');
             month.innerHTML = `<div>${e}</div>`;
@@ -211,7 +216,9 @@
                     2,'0'
                     )}`;
 
-                todayShowTime.textContent = formateTimer;},1000)       
+                todayShowTime.textContent = formateTimer;},1000);
+                
+        alert("its an dynamic app: 1.touch on the current month at header for traveling to another month")
 
 </script>
     
