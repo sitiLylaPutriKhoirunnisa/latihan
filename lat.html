@@ -4,32 +4,126 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play List Lagu Lyla</title>
-    <link
-    href="lat.css"
-    rel="stylesheet"/>
+    <title>Document</title>
+    <script type="text/javascript">
+        function getFirstDay(theYear, theMonth)
+        {
+            var firstDate = new Date(theYear, theMonth,1);
+            return firstDate.getDay();
+        }
+        function getMonthLen(theYear, theMonth)
+        {
+            var oneDay = 1000 * 60 * 60 * 24 ;
+            var thisMonth = new Date(theYear, theMonth, 1);
+            var nextMonth = new Date(theYear, theMonth + 1, 1);
+            var len =Math.ceil((nextMonth.getMonth.getTime() - thisMonth.getTime())/oneDay);
+            return len;
+        }
+        function getY2KYear(today)
+        {
+            var yr = today.getYear();
+            return ((yr < 1900)? yr+1900 : yr);
+        }
+        theMonth = new MakeArray(12);
+
+        function MakeArray(n)
+        {
+            this[0] = "January";
+            this[1] = "Februari";
+            this[2] = "March";
+            this[3] = "April";
+            this[4] = "May";
+            this[5] = "June";
+            this[6] = "July";
+            this[7] = "August";
+            this[8] = "September";
+            this[9] = "October";
+            this[10] = "November";
+            this[11] = "December";
+            this.length = n ;
+            return this ;
+        }
+
+        function populateFields(form)
+        {
+            var theMonth = form.chooseMonth.selectedIndex ;
+            var theYear = form.chooseYear.options[form.chooseYear.selectedIndex].text ;
+            var getFirstDay = getFirstDay(theYear, theMonth);
+            var howMany = getMonthLen(theYear, theMonth);
+                form.oneMonth.value = theMonths[theMonth] + "" + theYear ;
+            
+            for (var i = 0; i < 42; i ++)
+            {
+                if (i < FirstDay || i >= (howMany + FirstDay))
+                {
+                    form.oneDay[i].value = "";
+                }
+                else{
+                    form.oneDay[i].value = i - FirstDay + 1;
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="header">
-        <h2>Play List Lagu Favorit</h2>
-        <h3>Part 1</h3>
-    </div>
-    <div class="container">
-        <p>
-            気に入ってくれるといいな 
-        </p>
-        <a href="https://www.youtube.com/watch?v=b0ZBBjViV8Y"
-        target="_blank">Separuh Aku - Noah</a>
+    <h1>Month at a Glance (Dynamic)</h1>
+    <hr>
+    <script type="text/javascript">
+        <!-- start
+            var oneField = "<input type='text' name='oneDay' size=2 onfocus=''>";
+            var content = "<form><center><table border='1'>";
+                content += "<tr><th colspan = 7><input type='text' name ='oneMonth'></th></tr>"
+                content += "<tr><th> SUN </th><th> MON</th><th>TUE</th><th>WED</th><th>THUR</th><th>FRI</th><th>SAT</th></tr>";
+                content += "<tr>";
 
-        <a href="https://www.youtube.com/watch?v=9exIzZVJoY4"
-        target="_blank">Tak Ingin Usai - Keiysa Levronka</a>
+                    for(var i = 1; i < 43; i++)
+                    {
+                        content += "<td align='middle'>" + oneField + "</td>";
+                        if (i % 7 == 0)
+                        {
+                            content += "</tr><tr>" ;
+                        }
+                    }
+            
+                content += "</table" ;
+                document.write(content) ;
+            
+            -->
+    </script>
 
-        <a href="https://www.youtube.com/watch?v=hFGuCw57VpY"
-        target="_blank">It's You - Ali Gatie</a>
-    </div>
-    <a href="https://codingartistweb.com/"
-    target="_blank" id="website-link">Download Source Code</a>
-
+    <select name="chooseMonth">
+        <option selected>January</option>
+        <option>Februari</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+    </select>
     
+    <select name="chooseYear">
+        <option selected>2000</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+        <option>2004</option>
+        <option>2005</option>
+        <option>2006</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+        <option>2012</option>
+        <option>2013</option>
+        <option>2014</option>
+        <option>2015</option>
+    </select>
+    <input type="button" name="updater" value="Update Calender" onclick="populateFields(this.form)">
 </body>
 </html>
